@@ -44,7 +44,9 @@ export function Header({ currentView, setSearchParams }: { currentView: string, 
           <span className="text-slate-500 tracking-tighter">MISSION_TIME: 1284:44:02</span>
           <span className="text-success-cyan">SIGNAL_STRENGTH: 98.4%</span>
         </div>
-        <div className="w-9 h-9 rounded-sm border border-neon-pink/40 bg-cover bg-center ring-1 ring-sky-blue/20" style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxc518eizkO9lo2wuOfiMZOYlEofEHc0z6NDoDnYAn6HnKXKhNY-N1ngCXY7KEHFf42xA909mFo-zxf6AK4D1FWHb1o3qE1kxRfYlXPJDHqJAp3mCrjI0wqqVa7QYG1aInQnUtGiGQOquO4DRKYCLSxdFOT_F4giu0XFbtSsPocsJhsaOS-0xTWNATlyAewvOeSVu_HFxGxjutKUHoY5IIWU6vPEU0XzdE_7AfVh8d2XAVs_AMlMSOsa1eLThuOAiTsKNEcPGni54')"}}></div>
+        <div className="w-9 h-9 flex items-center justify-center rounded-sm border border-sky-blue/40 bg-black/60 ring-1 ring-sky-blue/20 relative overflow-hidden">
+          <span className="material-symbols-outlined text-success-cyan animate-pulse">radar</span>
+        </div>
       </div>
     </header>
   );

@@ -36,3 +36,22 @@ test('Verify view components exist and navigate correctly', async ({ page }) => 
   await page.click('button:has-text("ROADMAP")');
   await expect(page.locator('text=MISSION ROADMAP - Q3')).toBeVisible();
 });
+
+test('Verify thematic radar element replaced out-of-palette image', async ({ page }) => {
+  await page.goto('/');
+
+  // Verify the out-of-palette image is not present
+  const oldImageLocator = page.locator('div[style*="https://lh3.googleusercontent.com/aida-public/"]');
+  await expect(oldImageLocator).toHaveCount(0);
+
+  // Verify the new radar icon is present
+  const radarIcon = page.locator('span.material-symbols-outlined:has-text("radar")');
+  await expect(radarIcon).toBeVisible();
+  
+  // Verify styling logic applied
+  const radarContainer = radarIcon.locator('..');
+  await expect(radarContainer).toHaveClass(/border-sky-blue\/40/);
+
+  // Take screenshot as required
+  await page.screenshot({ path: 'evidence.png' });
+});
